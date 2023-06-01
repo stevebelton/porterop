@@ -22,7 +22,9 @@ https://kind.sigs.k8s.io/docs/user/quick-start/
 - sudo mv ./kind /usr/local/bin/kind
 
 **Create New PorterOperator K8S Cluster**
-*(file contents for porteroperator.yaml below - UPDATE THE IP ADDRESS OF YOUR HOST/VM running KinD)*
+*(file contents for porteroperator.yaml below*)
+
+NOTE: In order for Porter to successfully connect to KinD/K8S you must add an IP address of the host otherwise it will default to 127.0.0.1 which Porter will not be able to connect to.
 
 - kind create cluster --config porteroperator.yaml --name porteroperator
 
