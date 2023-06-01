@@ -89,7 +89,7 @@ Make sure to update the nonroot to your username.
 
 **Check Porter Operator Installation**
 
-- kubectl -n "porter-operator-system" get pods -o
+- kubectl -n "porter-operator-system" get pods -o wide
 
 ```
 porter-operator-system   mongodb-5ccfcb958c-jdg8c                             1/1     Running            0               4m32s
