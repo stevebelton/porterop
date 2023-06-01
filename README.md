@@ -8,7 +8,7 @@ https://getporter.org/quickstart/
 - export VERSION="v1.0.1"
 - curl -L https://cdn.porter.sh/$VERSION/install-linux.sh | bash
 
-**Install Kubebtl**
+**Install Kubectl**
 https://kubernetes.io/docs/tasks/tools/
 
 - curl -LO "https://dl.k8s.io/release/$(curl -L -s https://dl.k8s.io/release/stable.txt)/bin/linux/amd64/kubectl"
