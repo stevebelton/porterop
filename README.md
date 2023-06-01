@@ -22,9 +22,33 @@ https://kind.sigs.k8s.io/docs/user/quick-start/
 - sudo mv ./kind /usr/local/bin/kind
 
 **Create New PorterOperator K8S Cluster**
-*(see below for porteroperator.yaml contents)*
+*(file contents for porteroperator.yaml below - UPDATE THE IP ADDRESS OF YOUR HOST/VM running KinD)*
 
 - kind create cluster --config porteroperator.yaml --name porteroperator
+
+```
+kind: Cluster
+apiVersion: kind.x-k8s.io/v1alpha4
+networking:
+  apiServerAddress: "192.168.49.1"
+nodes:
+- role: control-plane
+  kubeadmConfigPatches:
+  - |
+    kind: InitConfiguration
+    nodeRegistration:
+      kubeletExtraArgs:
+        node-labels: "ingress-ready=true"    
+  extraPortMappings:
+  - containerPort: 80
+    hostPort: 8081
+    protocol: TCP
+  - containerPort: 443
+    hostPort: 8443
+    protocol: TCP
+- role: worker
+- role: worker
+```
 
 **Generate Porter Credential Set**
 
