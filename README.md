@@ -89,7 +89,7 @@ Make sure to update the nonroot to your username.
 
 **Check Porter Operator Installation**
 
-- kubectl get pods -A
+- kubectl -n "porter-operator-system" get pods -o
 
 ```
 porter-operator-system   mongodb-5ccfcb958c-jdg8c                             1/1     Running            0               4m32s
@@ -99,5 +99,3 @@ porter-operator-system   porter-operator-controller-manager-d79d958fc-z4wsv   1/
 **Create namespace/RBAC/etc**
 - porter invoke porterops --action configureNamespace --param namespace=mynamespace
 
-
-)
