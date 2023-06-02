@@ -111,7 +111,7 @@ Make sure to update the nonroot to your username.
 - porter credentials apply /home/nonroot/porterops.yaml
 
 **Install Porter Operator**
-- porter install porterops -r ghcr.io/getporter/porter-operator:v0.8.0
+- porter install porterops -c porterops -r ghcr.io/getporter/porter-operator:v0.8.0
 
 **Check Porter Operator Installation**
 
