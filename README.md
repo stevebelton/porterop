@@ -32,7 +32,7 @@ NOTE: In order for Porter to successfully connect to KinD/K8S you must add an IP
 kind: Cluster
 apiVersion: kind.x-k8s.io/v1alpha4
 networking:
-  apiServerAddress: "192.168.49.1"
+  apiServerAddress: "192.168.72.129"
 nodes:
 - role: control-plane
   kubeadmConfigPatches:
@@ -40,15 +40,7 @@ nodes:
     kind: InitConfiguration
     nodeRegistration:
       kubeletExtraArgs:
-        node-labels: "ingress-ready=true"    
-  extraPortMappings:
-  - containerPort: 80
-    hostPort: 8081
-    protocol: TCP
-  - containerPort: 443
-    hostPort: 8443
-    protocol: TCP
-- role: worker
+        node-labels: "ingress-ready=true"
 - role: worker
 ```
 
